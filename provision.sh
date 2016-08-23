@@ -64,6 +64,8 @@ then
     sudo sed -i "s/memory_limit = .*/memory_limit = 512M/" /etc/php5/apache2/php.ini
     sudo sed -i "s/upload_max_filesize = .*/upload_max_filesize = 100M/" /etc/php5/apache2/php.ini
     sudo sed -i "s/post_max_size = .*/post_max_size = 100M/" /etc/php5/apache2/php.ini
+    sudo sed -i "s/max_execution_time = .*/max_execution_time = 360/" /etc/php5/apache2/php.ini
+    sudo sed -i "s/max_input_time = .*/max_input_time = 120/" /etc/php5/apache2/php.ini
 
     # php5-mysql comes w/mysql drivers, but we still have to update php.ini to use them.
     sudo sed -i 's/;pdo_odbc.db2_instance_name/;pdo_odbc.db2_instance_name\nextension=pdo_mysql.so/' /etc/php5/apache2/php.ini
